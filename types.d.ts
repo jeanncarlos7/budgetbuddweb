@@ -6,9 +6,9 @@ interface Categoria {
 
 interface Movimentacao {
     id: number,
+    data: string,
     descricao: string,
     valor: number,
-    data: string,
-    tipo: "ENTRADA" | "SAIDA"
-    
+    tipo: string,
+    categoria: Categoria
 }

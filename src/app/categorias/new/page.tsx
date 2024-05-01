@@ -1,7 +1,7 @@
 "use client"
 
 import { create } from "@/app/actions/categorias/create";
-import { icons } from "@/app/utils/icons";
+import { icons } from "@/app/categorias/utils/icons";
 import NavBar from "@/components/NavBar";
 import { SubmitButton } from "@/components/SubmitButton";
 import { Autocomplete, AutocompleteItem, Button, Input } from "@nextui-org/react";

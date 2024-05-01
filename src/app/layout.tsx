@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Budget Buddy",
+  title: "JF Task Management",
   description: "Um app de controle de gastos pessoais",
 };
 

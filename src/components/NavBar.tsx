@@ -9,7 +9,7 @@ export default function NavBar({active}: NavBarProps) {
 
   return (
     <nav className="flex bg-slate-900 w-full justify-between items-center px-6 py-4">
-      <h1 className="text-4xl font-bold">Budget Buddy</h1>
+      <h1 className="text-4xl font-bold">JF Task Management</h1>
       <ul className="flex gap-6">
         <li className={active == "dashboard"? classActive : ""}>
           <Link href="/">dashboard</Link>

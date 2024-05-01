@@ -1,6 +1,6 @@
 "use client"
 
-import { meses } from "@/app/util/meses";
+import { meses } from "@/app/categorias/util/meses";
 import { Select, SelectItem } from "@nextui-org/react";
 import { ChangeEventHandler } from "react";
 
