@@ -41,35 +41,64 @@ export default function Home() {
       descricao: "Compra no mercado",
       valor: 100.00,
       tipo: "SAIDA",
+      categoria: {
+        id: 23,
+        nome: "Jean",
+        icone: 'bus'
+      } 
     },
+    
     {
       id: 2,
       data: "18/04/2024",
       descricao: "Compra de passagem",
       valor: 25.00,
       tipo: "SAIDA",
-    },
+      categoria: {
+        id: 23,
+        nome: "Jean",
+        icone: 'bus'
+    }
+  },
     {
       id: 3,
       data: "17/04/2024",
       descricao: "Compra de livro",
       valor: 50.00,
       tipo: "SAIDA",
-    },
+      categoria: {
+        id: 23,
+        nome: "Jean",
+        icone: 'bus'
+
+    }
+  },
     {
       id: 4,
       data: "16/04/2024",
       descricao: "Venda de livro",
       valor: 20.00,
       tipo: "ENTRADA",
-    },
+      categoria: {
+        id: 23,
+        nome: "Jean",
+        icone: 'bus'
+
+    }
+  },
     {
       id: 5,
       data: "15/04/2024",
       descricao: "Venda de livro",
       valor: 20.00,
       tipo: "ENTRADA",
-    },
+      categoria: {
+        id: 23,
+        nome: "Jean",
+        icone: 'bus'
+
+      }
+    }
   ]
 
   return (
