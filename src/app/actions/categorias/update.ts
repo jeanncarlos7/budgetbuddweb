@@ -2,37 +2,44 @@
 
 import { redirect } from "next/navigation"
 
-interface ValidationMessages {
-    campo: string,
-    mensagem: string
-}
+export async function create(prevState: any, formData: FormData){
 
-export async function update(prevState: any, formData: FormData) {
-    const id = formData.get("id")
+    const date = formData.get("data");
+    const partes = String(date).split('-');
+    formData.set("data", partes[2] + '/' + partes[1] + '/' + partes[0]);
+    
     const data = {
-      nome: formData.get("nome"),
-      icone: formData.get("icone")
+        descricao: formData.get("descricao"),
+        valor: formData.get("valor"),
+        tipo: formData.get("tipo"),
+        categoria: {
+            id: formData.get("categoria")
+        },
+        data: formData.get("data"),
     }
 
     const options = {
-      method: "put",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
 
-    const resp = await fetch("http:localhost:8080/categoria/" + id, options)
+    }
+    const resp = await fetch("http:localhost:8080/movimentacao", options)
 
     if (resp.ok){
-        redirect("/categorias")
+        redirect("/movimentacoes")
     }
 
-    if (!resp.ok){
-        const messages: Array<ValidationMessages> = await resp.json()
+    if(resp.status == 400){
+        const messages = await resp.json()
+
         return {
-            message: messages.find(m => m.campo == "nome")?.mensagem
+            message_descricao: messages.find( (m: any) => m.campo == "descricao")?.mensagem || '',
+            message_valor: messages.find( (m: any) => m.campo == "valor")?.mensagem || '',
+            message_data: messages.find( (m: any) => m.campo == "data")?.mensagem || '',
         }
     }
-
-  }
+    
+}
